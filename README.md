@@ -13,7 +13,9 @@ The mobile application site was built with the intention of helping users find a
 5. Young Teens: Would drill into section that would contain books intended for young teens.   Buttons on this page include a back button, that will return the user to the main page.
 6. Older Teens: Would drill into a section that contains book listings for older teens.  Buttons on this page include a back button, that will return the user to the main page.
 7. Adults - Submit Form: Drills into a section that is a placeholder for a form, that would allow users to submit their first name, last name, and email, as well as a selection of preferred genres, and the average min/max price range desired for a book.   Users can also enter notes for themselves here as well.  Buttons on this page include a back button, that will return the user to the main page.
-8. At the bottom of the main page, is a section for create a list of Book Favorites. 
+8. At the bottom of the main page, is a section for create a list of Book Favorites.
+
+The published website exists at:  http://sotd.us/amymalechakedrowski/mobileapp/homepage.html 
 
 remote_theme: pages-themes/architect@v0.2.0
 
