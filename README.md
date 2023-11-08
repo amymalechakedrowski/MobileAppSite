@@ -16,5 +16,4 @@ The mobile application site was built with the intention of helping users find a
 8. At the bottom of the main page, is a section for create a list of Book Favorites. 
 
 remote_theme: pages-themes/architect@v0.2.0
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+
