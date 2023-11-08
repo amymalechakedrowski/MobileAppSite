@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Recommendations</title>
+        <meta charset="utf-8">
+   
+        <style type="text/css">
+            .centeredtext {
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .font {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #354649;
+            }
+
+          .background{
+            background-color: white;
+          }
+
+       .padding{
+        padding:10px;
+       }
+
+       .inline {
+            display: inline-block;
+            vertical-align: middle;
+            
+        }
+       
+        .border-line {
+                  border-top: 5px solid #000; /* 1px solid black border */
+                  width: 100%; /* Span the entire width of the page */
+                  top: 0;
+                  border-color: #A3C6C4;
+                  }
+
+       
+            </style>
+        
+        <link rel="stylesheet" href="themes/Mod05Project.min.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+        <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script> 
+        
+    </head>
+    
+    <body>
+       <div data-role="page" id="homepage" data-theme="c">
+        <div data-role="panel" id="SidePanel" data-position="right" data-display="overlay" > 
+        <h3 style="color:white">Additional Resources</h3>
+        <ul data-role="listview">
+          <li><a href="https://www.amazon.com" target="_blank">Amazon</a></li>
+          <li><a href="https://www.goodreads.com" target="_blank">Goodreads</a></li>
+        </ul>
+        </div>
+           
+            <!--Header for the page.   Includes a logo and text. -->
+            <div data-role="header">
+              <div class="inline"> 
+              <img src="images/rasmussen_logo.png" width="218" height="45" alt=""/>
+                <div class="inline">Welcome! Find books to read </div>
+              </div>
+               <div><a href="#SidePanel" class ="ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-bars" data-position="right">Additional Resources</a></div>
+                </div>
+      
+            
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li><a href="#section1">Picture Books</a></li>
+                    <li><a href="#section2">Young Children</a></li>
+                    <li><a href="#section3">Older Children</a></li>
+                    <li><a href="#section4">Young Teens</a></li>
+                    <li><a href="#section5">Older Teens</a></li>
+                    <li><a href="#section6">Adults - Submit Form</a></li>
+                </ul>
+                <div class="padding"></div>
+                <div class="border-line"></div>
+                <div data-role="content">
+                  <form>
+                    <label for="inputText"><h3>Create or Add to list of favorites:</h3></label>
+                    <input type="text" id="inputText">
+                    <button type="button" id="saveButton">Add to Favorites List</button>
+                    <button type="button" id="clearButton">Clear Favorites List</button>
+                </form>
+    
+                <div id="output"></div>
+               </div>
+
+            </div>
+
+
+            <!--footer for the page.   Includes a copyright icon -->
+            <div data-role="footer"><h1>Declan's App &copy; 2023 </h1></div>
+    </div>
+
+    <div id="section1" data-role="page" data-add-back-btn="true" data-theme="a">
+      <div data-role="header" data-add-back-btn="true">
+          <h1>Picture Books</h1>
+          
+        </div>
+        <div data-role="content" style="background-color: white;">
+          <h3 class="font">Picture Books for Children</h3>
+          <p> 
+            <ul data-filter="true" data-role="listview" data-inset="true">
+              <li data-icon="shop">
+                <a href="https://www.amazon.com/Goodnight-Moon-Margaret-Wise-Brown/dp/0694003611/ref=asc_df_0694003611?tag=bingshoppinga-20&linkCode=df0&hvadid=80126962061079&hvnetw=o&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4583726540826975&psc=1" target="_blank" class="font">Good Night Moon: 0-3 Years</a> 
+               </li>
+               <li data-icon="shop"><a href="https://www.amazon.com/s?k=goodnight+gorilla&crid=1H6NTVUQ90Y9M&sprefix=Goodnight+gorr%2Caps%2C235&ref=nb_sb_ss_ts-doa-p_1_14" target="_blank">Good Night, Gorilla: 1-3 Years</a></li>
+              <li data-icon="shop"> 
+                <a href="https://www.amazon.com/Very-Hungry-Caterpillar-Eric-Carle/dp/0399226907/ref=sr_1_1?crid=1CMQLO8QOM5GF&keywords=the+very+hungry+caterpillar+board+book&qid=1698195988&s=books&sprefix=The+very+hu%2Cstripbooks%2C129&sr=1-1" target="_blank">The Very Hungry Caterpillar: 1-3 Years</a>
+              </li>
+              <li data-icon="shop">
+                <a href="https://www.amazon.com/Brown-Bear-What-You-See/dp/0805047905/ref=pd_bxgy_img_sccl_1/139-8178049-0600430?pd_rd_w=idWFH&content-id=amzn1.sym.43d28dfc-aa4f-4ef6-b591-5ab7095e137f&pf_rd_p=43d28dfc-aa4f-4ef6-b591-5ab7095e137f&pf_rd_r=M32WFE1GGXC12GGSAFBD&pd_rd_wg=ua6VS&pd_rd_r=aa601c6f-b57f-45d7-8aea-ddcc4a253a08&pd_rd_i=0805047905&psc=1" target="_blank">Brown Bear, Brown Bear, What Do You See?: 0-3 Years</a>
+              </li>
+            </ul>
+          </p>
+        </div>
+        <div data-role="footer">
+          <h4>My App &copy; 2023</h4>
+        </div>
+    </div>
+    
+    
+    <div id="section2" data-role="page" data-add-back-btn="true" data-theme="b">
+        <div data-role="header"  data-add-back-btn="true">
+            <h1>Young Children</h1>
+        </div>
+        <div data-role="content">
+          <div class="ui-grid-b" data-filter="true">
+            <div class="ui-block-a" style="height:260px;width:350px;"><div class="ui-bar ui-bar-a"><a href="https://www.amazon.com/Little-Blue-Truck-padded-board/dp/0358211786/ref=sr_1_1_sspa?crid=195K6DKPG6ET7&keywords=Little+Blue+Truck&qid=1698517497&sprefix=little+blue+truck%2Caps%2C192&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank" >Little Blue Truck</a> <img src="images/LittleBlueTruck.jpg"></div></div>
+            <div class="ui-block-b" style="height:260px;width:350px;"><div class="ui-bar ui-bar-a"><a href="https://www.amazon.com/Good-Night-Little-Blue-Truck/dp/132885213X/ref=sr_1_2_sspa?crid=195K6DKPG6ET7&keywords=Little+Blue+Truck&qid=1698517619&sprefix=little+blue+truck%2Caps%2C192&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank" >Good Night, Little Blue Truck</a> <img src="images/GoodnightLBT.jpg"></div></div>
+            <div class="ui-block-a" style="height:260px;width:350px;"><div class="ui-bar ui-bar-a"><a href="https://www.amazon.com/Little-Blue-Truck-Makes-Friend/dp/0358722829/ref=sr_1_7?crid=195K6DKPG6ET7&keywords=Little+Blue+Truck&qid=1698517619&sprefix=little+blue+truck%2Caps%2C192&sr=8-7" target="_blank">Little Blue Truck Makes a Friend</a> <img src="images/Friend.JPG" ></div></div>
+            <div class="ui-block-b" style="height:260px;width:350px;"><div class="ui-bar ui-bar-a"><a href="https://www.amazon.com/Time-School-Little-Blue-Truck/dp/0358412242/ref=sr_1_4_sspa?crid=195K6DKPG6ET7&keywords=Little+Blue+Truck&qid=1698517619&sprefix=little+blue+truck%2Caps%2C192&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank">Time for School, Little Blue Truck</a> <img src="images/school.JPG"> </div></div>
+           </div><!-- /grid-b -->
+          
+        </div>
+        <div data-role="footer" >
+            <h4>My App &copy; 2023</h4>
+        </div>
+    </div>
+    
+    <div id="section3" data-role="page"  data-add-back-btn="true" data-theme="c"> 
+        <div data-role="header" data-add-back-btn="true">
+            <h1>Older Children</h1>
+        </div>
+        <div data-role="content">
+          <h3>Header</h3>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
+          </div>
+        <div data-role="footer">
+          <h4>My App &copy; 2023</h4>
+        </div>
+    </div>
+    
+    <div id="section4" data-role="page" data-add-back-btn="true" data-theme="c">
+        <div data-role="header"data-add-back-btn="true">
+            <h1>Young Teens</h1>
+        </div>
+        <div data-role="content">
+          <h3>Header</h3>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
+        </div>
+        <div data-role="footer">
+            <h4>My App &copy; 2023</h4>
+        </div>
+    </div>
+   
+    <div data-role="page" id="section5" data-add-back-btn="true" data-theme="c">
+        <div data-role="header" data-add-back-btn="true">
+            <h1>Older Teens</h1>
+        </div>
+        <div data-role="content">
+          <h3>Header</h3>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+        <div data-role="footer">
+            <h4>My App &copy; 2023</h4>
+        </div>
+    </div>
+    
+    <div data-role="page" id="section6" data-add-back-btn="true" data-theme="c">
+      <div data-role="header" data-add-back-btn="true">
+        <h1>Adults</h1>
+      </div>
+      <div data-role="content">Join a subscription list for preferred reading content</div>
+      <div data-role="content">
+        <form action="form.php" method="post">
+          <label for="fname">First name:</label>
+          <input type="text" name="fname" id="fname" data-clear-btn="true" class="localstorage">
+          
+          <label for="lname">Last Name: </label>
+          <input type="text" name="lname" id="lname" data-clear-btn="true">
+    
+          <label for="email">e-mail: </label>
+          <input type="text" name="email" id="email" data-clear-btn="true">
+        
+          <div class="padding"></div> <!--This is strictly to create a more legible form by adding space between inputs-->
+
+          <label for="genres"></label>
+          <select multiple="multiple" data-native-menu="false" name="genres" id="genres">
+           <option value ="">Select your preferred generes:</option>
+           <option value="Romance">Romance</option>
+           <option value="Horror">Horror</option>
+           <option value="Comedy">Comedy</option>
+           <option value="scifi">Science Fiction</option>
+           <option value="Mystery">Mystery</option>
+           <option value="History">History</option>
+           <option value="Adventure">Action and Adventure</option>
+          </select>
+
+          <div class="padding"></div>
+          <div class="padding"></div>
+
+          <div data-role="rangeslider">
+          <label for="pricerangemin">Price Range</label>
+          <input type="range" name="pricerangemin" id="pricerangemin" value="9.99" min="1.99" max="99.99">
+          <label for="pricerangemax">Price Range</label>
+          <input type="range" name="pricerangemax" id="pricerangemax" value="19.99" min="1.99" max="99.99">
+        </div>
+
+        <div class="padding"></div>
+          
+          <input type="reset" value="Clear Form Fields">
+          <input type="submit" value="Submit Form Data">
+        </form>   
+
+        <div class="border-line"></div>
+        
+        <div data-role="content">
+          <H2>Store Notes to Yourself</H2>
+          
+          <textarea class="localstorage" placeholder="Anything you type here will be saved with HTML5 localStorage." autofocus></textarea>
+          <button class="clear">Clear Notes</button>
+          
+      </div>
+
+      <div data-role="footer">
+        <h4>My App &copy; 2023</h4>
+      </div>
+    </div>
+
+    <script>
+      /*
+        $(document).ready(function() {
+            var header = $('div[data-role="header"]');
+            header.css('background-color', '#A3C6C4'); 
+            header.css('color','white')
+            
+
+            var page = $('div[data-role="page"]');
+            page.css('background-color','#E0E7E9');
+
+            var footer = $('div[data-role="footer"]');
+            footer.css('background-color','#A3C6C4');
+            footer.css('color','white');
+            
+
+          
+        })*/
+
+        // Wait for the document to be ready
+        $(document).ready(function () {
+            // Check if local storage is available
+            if (typeof (Storage) !== "undefined") {
+                // Retrieve stored data
+                var storedData = localStorage.getItem("userInput");
+
+                if (storedData) {
+                    $("#output").text("Stored Favorites: " + storedData);
+                }
+
+                // Handle save button click
+                $("#saveButton").on("click", function () {
+                    var userInput = $("#inputText").val();
+                    if (userInput) {
+                        // Append the value to existing data in local storage
+                        if (storedData) {
+                            storedData += ", " + userInput;
+                        } else {
+                            storedData = userInput;
+                        }
+                        localStorage.setItem("userInput", storedData);
+                        $("#output").text("Stored Favorites: " + storedData);
+                    }
+                });
+
+                // Handle clear button click
+                $("#clearButton").on("click", function () {
+                    // Clear the stored data
+                    localStorage.removeItem("userInput");
+                    $("#output").text("List of Favorites Cleared");
+                });
+            } else {
+                $("#output").text("Local storage is not supported in your browser.");
+            }
+        });
+
+      /*  <!--Notes Tab storage --> */
+ 
+        (function() {
+                var rasm = document.querySelector('.localstorage');
+                function supportsLocalStorage() {
+                        return typeof(Storage)!== 'undefined';
+                        }
+
+        if (!supportsLocalStorage()) {
+            rasm.value = 'Your browser does not support localStorage.';
+          }  
+          else {
+            try {
+                  setInterval(function() {
+                          localStorage.setItem('autosave', rasm.value);
+                            }, 1000); 
+                            } 
+           catch (e) {
+                if (e == QUOTA_EXCEEDED_ERR) {alert('Quota exceeded!');   }
+                    }
+  
+                    if (localStorage.getItem('autosave')) {
+              rasm.value = localStorage.getItem('autosave');
+                 }
+  document.querySelector('.clear').onclick = function() {
+    rasm.value = '';
+    localStorage.removeItem('autosave');
+  };
+  document.querySelector('.empty').onclick = function() {
+    rasm.value = '';
+    localStorage.clear();
+  };
+}
+
+})();
+
+
+     </script>
+
+   </body>
+</html>
+
+
+
+  
+
